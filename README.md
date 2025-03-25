@@ -1,11 +1,8 @@
-go-retryablehttp
-================
+# go-retryablehttp
 
-[![Build Status](http://img.shields.io/travis/hashicorp/go-retryablehttp.svg?style=flat-square)][travis]
-[![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)][godocs]
+#### Note: this is a fork of Hashicorp's repository to support exposing responses in the `PrepareRetry` function ([Issue #252](https://github.com/hashicorp/go-retryablehttp/issues/252)).
 
-[travis]: http://travis-ci.org/hashicorp/go-retryablehttp
-[godocs]: http://godoc.org/github.com/hashicorp/go-retryablehttp
+---
 
 The `retryablehttp` package provides a familiar HTTP client interface with
 automatic retries and exponential backoff. It is a thin wrapper over the
@@ -15,7 +12,7 @@ makes `retryablehttp` very easy to drop into existing programs.
 `retryablehttp` performs automatic retries under certain conditions. Mainly, if
 an error is returned by the client (connection errors, etc.), or if a 500-range
 response code is received (except 501), then a retry is invoked after a wait
-period.  Otherwise, the response is returned and left to the caller to
+period. Otherwise, the response is returned and left to the caller to
 interpret.
 
 The main difference from `net/http` is that requests which take a request body
@@ -28,8 +25,7 @@ details.
 Version 0.6.0 and before are compatible with Go prior to 1.12. From 0.6.1 onward, Go 1.12+ is required.
 From 0.6.7 onward, Go 1.13+ is required.
 
-Example Use
-===========
+# Example Use
 
 Using this library should look almost identical to what you would do with
 `net/http`. The most simple example of a GET request is shown below:
